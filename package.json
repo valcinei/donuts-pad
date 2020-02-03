@@ -1,0 +1,26 @@
+{
+  "name": "donuts-pad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jasmine",
+    "test:watch": "nodemon  --exec 'jasmine'"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "jasmine": "^3.5.0",
+    "nodemon": "^2.0.2"
+  }
+}
