@@ -6,6 +6,7 @@ const wsocket = require('./wsocket');
 const router = require('./router');
 
 app.use(express.static(path.resolve() + '/node_modules/socket.io-client/dist'));
+app.use(express.static(path.resolve() + '/node_modules/bootstrap/dist'));
 app.set('views', __dirname + '/views');
 app.use(express.static('../public'));
 app.engine('html', require('ejs').renderFile);
