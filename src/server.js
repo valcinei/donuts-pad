@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const express = require('express');
 const app = express();
 const socket = require('socket.io');
@@ -14,8 +16,14 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.use(router);
+let port = 3131;
+if(process.argv[2]==="--port" && !!process.argv[3]){
+port = process.argv[3]
+}
 
-const server = app.listen(3131);
+const server = app.listen(port,(a)=>{
+    console.log(`🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩 Donuts works in port ${port} :) 🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩`)
+});
 const io = socket(server);
 
 io.on('connection', wsocket);
