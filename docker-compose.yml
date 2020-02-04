@@ -1,0 +1,9 @@
+version: "3.5"
+
+services:
+    donuts:
+        container_name: donuts
+        restart: always
+        image: valcinei/donuts:0.0.1
+        ports: 
+            - 3132:3131
