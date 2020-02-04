@@ -70,7 +70,7 @@
 </style>
 <script>
     window.onload = function(){
-        const socket = io('http://localhost:3131');
+        const socket = io();
         socket.on('connect', function(){});
         socket.on('event', function(data){});
         socket.on('disconnect', function(){});
