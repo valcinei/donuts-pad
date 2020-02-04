@@ -28,7 +28,7 @@ A implementation like dontpad to you run locally :)
   ```
 Run with docker-compose:
  
- dokcer-compose.yml:
+ docker-compose.yml:
  ```bash
   version: "3.5"
 
@@ -44,3 +44,24 @@ services:
    ```bash
   docker-compose up -d
   ```
+
+Contribute with this project:  
+https://github.com/valcinei/donuts-pad  
+
+Clone:  
+```bash
+  git clone https://github.com/valcinei/donuts-pad.git
+```
+
+Install dependencies: 
+```bash
+  npm install
+```
+Run:
+```bash
+  npm run dev
+```
+or
+```bash
+  npm run start
+```

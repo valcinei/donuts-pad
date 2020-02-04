@@ -28,6 +28,7 @@
     }
 </style>
 <script>
+    let bounceTimeOut = null;
     window.onload = function(){
         const socket = io();
         socket.on('connect', function(){});
@@ -42,7 +43,13 @@
     function sendData(data){
         const content = document.querySelector('#input-area').value;
         const path = window.location.pathname;
-        socket.emit('update',({path,content}))
+        if(!!bounceTimeOut){
+            clearTimeout(bounceTimeOut);
+        }
+        bounceTimeOut = setTimeout(()=>{
+            console.log('emit')
+            socket.emit('update',({path,content}))
+        },1000)
     }
 </script>
 </html>
