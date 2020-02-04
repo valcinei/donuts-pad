@@ -63,5 +63,5 @@ Run:
 ```
 or
 ```bash
-  npm run start
+  npm start
 ```
