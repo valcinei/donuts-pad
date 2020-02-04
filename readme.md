@@ -24,7 +24,7 @@ A implementation like dontpad to you run locally :)
  ### With Docker 
  Run docker command:
  ```bash
-  docker run --name donuts -p 3132:3131 -d valcinei/donuts:0.0.1 
+  docker run --name donuts -p 3132:3131 -d valcinei/donuts:release-1.0.0 
   ```
 Run with docker-compose:
  
@@ -36,7 +36,7 @@ services:
     donuts:
         container_name: donuts
         restart: always
-        image: valcinei/donuts:0.0.1
+        image: valcinei/donuts:release-1.0.0
         ports: 
             - 3132:3131
   ```
