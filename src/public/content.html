@@ -47,7 +47,6 @@
             clearTimeout(bounceTimeOut);
         }
         bounceTimeOut = setTimeout(()=>{
-            console.log('emit')
             socket.emit('update',({path,content}))
         },1000)
     }
