@@ -7,5 +7,5 @@ module.exports = (socket) => {
         pad.save(data);
         socket.broadcast.emit('update', data)
     })
-    console.log('a user connected');
+    console.log(`a user connected`);
 }

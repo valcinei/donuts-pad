@@ -15,6 +15,10 @@ module.exports = {
         res.json(p);
     },
 
+    home(req, res){
+        res.render(path.resolve(__dirname, '..') + '/public/index.html');
+    },
+
     render(req, res) {
         let urlParams = helper.urlToDotPath(req.params[0]);
         const pad = new Pad();
@@ -22,7 +26,7 @@ module.exports = {
         if (!p) {
             p = pad.save({ path: urlParams, content: 'This is Empty' });
         }
-        res.render(path.resolve(__dirname, '..') + '/public/index.html', { content: p.content });
+        res.render(path.resolve(__dirname, '..') + '/public/content.html', { content: p.content });
 
     }
 }

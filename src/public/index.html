@@ -9,9 +9,44 @@
     <title>DonutsPad</title>
 </head>
 <body>
-    <textarea name="" id="input-area" cols="30" onkeyup="sendData()"  rows="10">
-        <%= content %>
-    </textarea>
+  <div class="container text-center">
+    <h1>DonutsPad</h1>
+    <form onsubmit="onGo(event)">
+        <div class="input-group  input-group-lg mb-3 ">
+            <input type="text" class="form-control" id="input-go" placeholder="Enter with an subdoman" aria-label="Enter with an subdoman" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Go</button>
+            </div>
+          </div>
+      </form>
+      <div class="container text-left sub-header">
+        <div>
+            Dont login, just use a URL
+        </div>
+        <div>
+            Dont save, text is auto-saved
+        </div>
+        <div>
+            Dont juggle attached files, edit online with your friends
+        </div>
+        <div>
+            Dont lose your content, download with YourURL.zip
+        </div>
+        <div>
+            Dont forget, you can use yourURL/yourFolder/yourSubfolder
+        </div>
+         <div>
+             Donuts! :)
+         </div>
+         <div class="text-center">
+           🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩🍩
+        </div>
+      </div>
+      <a target="_blank" href="https://github.com/valcinei/donuts-pad">
+        <img src="/assets/github-logo.png" alt="">
+        Contribute
+        </a>
+  </div>
 </body>
 <style>
     body{
@@ -26,6 +61,12 @@
         margin: 0;
         padding: 0;
     }
+    .sub-header{
+        font-size: 28px;
+    }
+    a:link{
+        text-decoration: none;
+    }
 </style>
 <script>
     window.onload = function(){
@@ -39,10 +80,11 @@
         window.socket = socket;
     }
     
-    function sendData(data){
-        const content = document.querySelector('#input-area').value;
-        const path = window.location.pathname;
-        socket.emit('update',({path,content}))
+    function onGo(event){
+        event.preventDefault();
+        const content = document.querySelector('#input-go').value;
+        window.location.replace(`/${content}`);
     }
+
 </script>
 </html>

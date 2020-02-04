@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/socket.io.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" >
+    <title>DonutsPad</title>
+</head>
+<body>
+    <textarea name="" id="input-area" cols="30" onkeyup="sendData()"  rows="10">
+        <%= content %>
+    </textarea>
+</body>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+      
+    }
+    textarea{
+        font-size: 22px;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<script>
+    window.onload = function(){
+        const socket = io('http://localhost:3131');
+        socket.on('connect', function(){});
+        socket.on('event', function(data){});
+        socket.on('disconnect', function(){});
+        socket.on('update',(data)=>{
+            document.querySelector('#input-area').value = data.content;
+        })
+        window.socket = socket;
+    }
+    
+    function sendData(data){
+        const content = document.querySelector('#input-area').value;
+        const path = window.location.pathname;
+        socket.emit('update',({path,content}))
+    }
+</script>
+</html>
